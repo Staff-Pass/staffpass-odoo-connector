@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+        id="menu_staffpass_root"
+        name="StaffPass"
+        sequence="85"
+        web_icon="staffpass_payroll_connector,static/description/icon.png"
+        groups="staffpass_payroll_connector.group_staffpass_integration,account.group_account_manager"
+    />
+    <menuitem
+        id="menu_staffpass_payroll_imports"
+        name="Payroll imports"
+        parent="menu_staffpass_root"
+        action="action_staffpass_payroll_imports"
+        sequence="10"
+        groups="staffpass_payroll_connector.group_staffpass_integration,account.group_account_manager"
+    />
+</odoo>

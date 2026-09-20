@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_company_form_staffpass" model="ir.ui.view">
+        <field name="name">res.company.form.staffpass.connector</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="StaffPass" name="staffpass_connector" groups="base.group_system">
+                    <group string="Payroll journal imports">
+                        <field name="staffpass_connector_enabled"/>
+                        <field name="staffpass_external_id" required="staffpass_connector_enabled"/>
+                        <field name="staffpass_journal_id" required="staffpass_connector_enabled"/>
+                    </group>
+                    <div class="alert alert-info" role="alert">
+                        Imported payroll entries are always created as draft journal entries.
+                        Configure a dedicated integration user and API key with the StaffPass
+                        Integration privilege.
+                    </div>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#F4F8FF"/>
+  <rect width="1280" height="78" fill="#071827"/>
+  <text x="48" y="51" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#FFFFFF">StaffPass · Company configuration</text>
+  <rect x="72" y="118" width="1136" height="526" rx="18" fill="#FFFFFF" stroke="#C9D8E4"/>
+  <text x="116" y="174" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#071827">Payroll journal imports</text>
+  <rect x="116" y="210" width="26" height="26" rx="5" fill="#008FFE"/><path d="m122 223 6 6 10-13" fill="none" stroke="#FFF" stroke-width="4"/>
+  <text x="158" y="231" font-family="Arial,sans-serif" font-size="21" fill="#20394D">Enable StaffPass payroll imports</text>
+  <text x="116" y="298" font-family="Arial,sans-serif" font-size="18" fill="#506779">StaffPass company ID</text>
+  <rect x="116" y="315" width="476" height="52" rx="8" fill="#F8FBFD" stroke="#9EB4C5"/>
+  <text x="136" y="348" font-family="monospace" font-size="18" fill="#20394D">company_panama_demo</text>
+  <text x="116" y="423" font-family="Arial,sans-serif" font-size="18" fill="#506779">Payroll journal</text>
+  <rect x="116" y="440" width="476" height="52" rx="8" fill="#F8FBFD" stroke="#9EB4C5"/>
+  <text x="136" y="473" font-family="Arial,sans-serif" font-size="18" fill="#20394D">StaffPass Payroll (SPAY)</text>
+  <rect x="682" y="230" width="430" height="258" rx="16" fill="#EAF6FF" stroke="#47AFFA"/>
+  <text x="720" y="282" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#0052A3">Secure defaults</text>
+  <text x="720" y="329" font-family="Arial,sans-serif" font-size="18" fill="#20394D">• Dedicated integration user</text>
+  <text x="720" y="368" font-family="Arial,sans-serif" font-size="18" fill="#20394D">• Explicit company mapping</text>
+  <text x="720" y="407" font-family="Arial,sans-serif" font-size="18" fill="#20394D">• Draft entries only</text>
+  <text x="720" y="446" font-family="Arial,sans-serif" font-size="18" fill="#20394D">• No payroll PII stored in logs</text>
+</svg>

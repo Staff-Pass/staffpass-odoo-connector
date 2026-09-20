@@ -1,0 +1,26 @@
+{
+    "name": "Payroll Journal Bridge",
+    "summary": "Import StaffPass payroll journals into Odoo with idempotency and audit logs",
+    "version": "19.0.1.0.0",
+    "author": "StaffPass",
+    "website": "https://staffpass.app",
+    "support": "support@softwaretoaster.com",
+    "category": "Accounting/Accounting",
+    "license": "LGPL-3",
+    "depends": ["account"],
+    "data": [
+        "security/staffpass_security.xml",
+        "security/ir.model.access.csv",
+        "views/res_company_views.xml",
+        "views/payroll_import_views.xml",
+        "views/staffpass_menus.xml",
+    ],
+    "images": [
+        "static/description/main_screenshot.png",
+        "static/description/configuration.png",
+        "static/description/audit_log.png",
+    ],
+    "application": True,
+    "installable": True,
+    "auto_install": False,
+}

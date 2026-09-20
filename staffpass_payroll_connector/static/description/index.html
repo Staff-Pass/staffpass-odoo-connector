@@ -1,0 +1,58 @@
+<section class="container py-4">
+  <div class="text-center mb-4">
+    <img src="main_screenshot.png" class="img-fluid rounded" alt="StaffPass Payroll Journal Bridge for Odoo"/>
+  </div>
+  <h2 class="text-center">Safe payroll journals from StaffPass to Odoo</h2>
+  <p class="lead text-center">
+    Import balanced payroll journal entries as drafts with company isolation,
+    deterministic idempotency, account validation, analytic cost centers and an audit log.
+  </p>
+
+  <div class="row mt-5">
+    <div class="col-md-4">
+      <h4>Draft by design</h4>
+      <p>Every imported journal remains in draft for accounting review and approval in Odoo.</p>
+    </div>
+    <div class="col-md-4">
+      <h4>Idempotent imports</h4>
+      <p>Repeated delivery returns the existing move. Changed content under the same external ID is rejected.</p>
+    </div>
+    <div class="col-md-4">
+      <h4>Multi-company controls</h4>
+      <p>Only explicitly enabled companies and journals can receive data from the dedicated integration user.</p>
+    </div>
+  </div>
+
+  <div class="my-5">
+    <img src="configuration.png" class="img-fluid border rounded" alt="StaffPass company configuration in Odoo"/>
+  </div>
+
+  <h3>Accounting safeguards</h3>
+  <ul>
+    <li>Validates contract version, currency, civil date and balanced totals.</li>
+    <li>Resolves active accounts by code inside the configured Odoo company.</li>
+    <li>Maps optional cost center codes to active analytic accounts.</li>
+    <li>Rejects missing, ambiguous, inactive or cross-company mappings.</li>
+    <li>Serializes concurrent imports and keeps a durable audit record.</li>
+    <li>Creates safe reversal drafts without overwriting the original move.</li>
+  </ul>
+
+  <div class="my-5">
+    <img src="audit_log.png" class="img-fluid border rounded" alt="StaffPass payroll import audit log"/>
+  </div>
+
+  <h3>Requirements</h3>
+  <ul>
+    <li>Odoo 19 Community or Enterprise on Odoo.sh or on-premise.</li>
+    <li>Odoo Accounting installed.</li>
+    <li>A StaffPass company with payroll accounting integration enabled.</li>
+    <li>A dedicated Odoo integration user and API key with minimum required permissions.</li>
+  </ul>
+
+  <div class="alert alert-info mt-4">
+    This module requires the external StaffPass service. It does not post entries automatically,
+    transmit payroll from Odoo, or replace an accountant's review.
+  </div>
+
+  <p class="text-center mt-4">Support: <a href="mailto:support@softwaretoaster.com">support@softwaretoaster.com</a></p>
+</section>

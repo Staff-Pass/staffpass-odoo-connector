@@ -1,0 +1,46 @@
+name: Odoo installation test
+
+on:
+  push:
+    branches: ["19.0"]
+  pull_request:
+    branches: ["19.0"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  odoo-19:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    container: odoo:19.0
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: postgres
+          POSTGRES_USER: odoo
+          POSTGRES_PASSWORD: odoo
+        options: >-
+          --health-cmd "pg_isready -U odoo -d postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 20
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Install addon and run Odoo transaction tests
+        run: >-
+          odoo
+          --database staffpass_addon_test
+          --db_host postgres
+          --db_port 5432
+          --db_user odoo
+          --db_password odoo
+          --addons-path /usr/lib/python3/dist-packages/odoo/addons,$GITHUB_WORKSPACE
+          --init staffpass_payroll_connector
+          --without-demo all
+          --test-enable
+          --test-tags /staffpass_payroll_connector
+          --stop-after-init
+          --log-level test
