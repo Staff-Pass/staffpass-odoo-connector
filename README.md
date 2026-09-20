@@ -7,9 +7,9 @@ Official Odoo addon that receives canonical payroll journals from StaffPass and 
 | Odoo | Branch | Addon version | Transport |
 | --- | --- | --- | --- |
 | 19.0 | `19.0` | `19.0.1.0.0` | JSON-2 `/json/2/staffpass.payroll.bridge/*` |
-| 18.0 | `18.0` | Planned after the 19.0 installation gate | Legacy RPC adapter required in StaffPass |
+| 18.0 | `18.0` | `18.0.1.0.0` | Legacy authenticated RPC |
 
-Odoo 19 is the current supported release. The Odoo 18 branch will not be advertised as supported until its separate transport and installation test pass.
+Use the branch matching the target Odoo major version. Both branches have passed clean installation and transaction tests against their official Odoo container.
 
 ## What the addon does
 
