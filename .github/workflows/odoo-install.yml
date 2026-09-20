@@ -2,20 +2,20 @@ name: Odoo installation test
 
 on:
   push:
-    branches: ["19.0"]
+    branches: ["18.0"]
   pull_request:
-    branches: ["19.0"]
+    branches: ["18.0"]
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  odoo-19:
+  odoo-18:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     container:
-      image: odoo:19.0
+      image: odoo:18.0
       options: --user root
     services:
       postgres:

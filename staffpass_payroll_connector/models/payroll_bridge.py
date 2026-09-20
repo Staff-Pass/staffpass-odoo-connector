@@ -56,7 +56,7 @@ class StaffPassPayrollBridge(models.AbstractModel):
         company = self._company(company_id)
         account_model = self.env["account.account"].with_company(company)
         accounts = account_model.search(
-            [("company_ids", "in", company.id), ("active", "=", True)],
+            [("company_ids", "in", company.id), ("deprecated", "=", False)],
             order="code, id",
             limit=5000,
         )
@@ -371,7 +371,7 @@ class StaffPassPayrollBridge(models.AbstractModel):
                 [
                     ("company_ids", "in", company.id),
                     ("code", "=", code),
-                    ("active", "=", True),
+                    ("deprecated", "=", False),
                 ],
                 limit=2,
             )

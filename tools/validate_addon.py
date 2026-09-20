@@ -20,8 +20,8 @@ required = {"name", "summary", "version", "license", "depends", "data", "images"
 missing = required.difference(manifest)
 if missing:
     fail(f"manifest missing fields: {sorted(missing)}")
-if manifest.get("version") != "19.0.1.0.0":
-    fail("manifest version must target Odoo 19.0")
+if manifest.get("version") != "18.0.1.0.0":
+    fail("manifest version must target Odoo 18.0")
 if manifest.get("license") != "LGPL-3":
     fail("manifest license must be LGPL-3")
 if manifest.get("depends") != ["account"]:
@@ -73,4 +73,4 @@ for forbidden in ("github.com", "apps.apple.com", "play.google.com"):
 if failures:
     print("\n".join(f"- {failure}" for failure in failures), file=sys.stderr)
     raise SystemExit(1)
-print("Validated Odoo 19 addon structure, XML, manifest and store assets.")
+print("Validated Odoo 18 addon structure, XML, manifest and store assets.")

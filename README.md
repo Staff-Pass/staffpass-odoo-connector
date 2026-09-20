@@ -7,9 +7,9 @@ Official Odoo addon that receives canonical payroll journals from StaffPass and 
 | Odoo | Branch | Addon version | Transport |
 | --- | --- | --- | --- |
 | 19.0 | `19.0` | `19.0.1.0.0` | JSON-2 `/json/2/staffpass.payroll.bridge/*` |
-| 18.0 | `18.0` | Planned after the 19.0 installation gate | Legacy RPC adapter required in StaffPass |
+| 18.0 | `18.0` | `18.0.1.0.0` | Legacy authenticated RPC |
 
-Odoo 19 is the current supported release. The Odoo 18 branch will not be advertised as supported until its separate transport and installation test pass.
+Use the branch matching the target Odoo major version. Odoo 19 uses JSON-2; Odoo 18 exposes the same model methods through its authenticated legacy RPC API.
 
 ## What the addon does
 
@@ -33,18 +33,18 @@ It does not calculate payroll, post accounting moves, store StaffPass credential
 4. Create a dedicated Odoo bot user, grant the **StaffPass Integration / Integration User** privilege and generate an API key.
 5. Give that user access only to the companies that StaffPass may synchronize.
 
-Odoo 19 external API access requires an Odoo Custom plan. Odoo Online cannot install Python third-party addons; use Odoo.sh or an on-premise deployment.
+External API access requires an Odoo Custom plan. Odoo Online cannot install Python third-party addons; use Odoo.sh or an on-premise deployment.
 
-## JSON-2 methods for Odoo 19
+## Integration methods
 
-The addon exposes model methods through Odoo's authenticated JSON-2 API:
+The addon exposes these authenticated model methods:
 
 - `staffpass.payroll.bridge/get_catalog`
 - `staffpass.payroll.bridge/import_journal`
 - `staffpass.payroll.bridge/get_journal_status`
 - `staffpass.payroll.bridge/reverse_journal`
 
-Requests use an Odoo API key in `Authorization: bearer ...`. Do not send a user password or place credentials in the URL.
+On Odoo 18 call them with `execute_kw` through the authenticated external RPC API, using a dedicated integration user and API key. Do not send a user password or place credentials in the URL. The Odoo 19 branch instead uses JSON-2 with a bearer API key.
 
 ## Installation
 
@@ -68,7 +68,7 @@ The repository also contains Odoo `TransactionCase` coverage for balanced import
 
 ## Odoo Apps publication
 
-The addon includes the required manifest, real PNG icon, HTML description, screenshots, LGPL-3 license and support metadata. Register this Git repository in the Odoo Apps vendor dashboard only after the Odoo 19 installation workflow is green. Store publication itself requires the StaffPass Odoo vendor account and acceptance of Odoo's publisher terms.
+The addon includes the required manifest, real PNG icon, HTML description, screenshots, LGPL-3 license and support metadata. Register this Git repository in the Odoo Apps vendor dashboard only after the installation workflow for the target branch is green. Store publication itself requires the StaffPass Odoo vendor account and acceptance of Odoo's publisher terms.
 
 ## License
 

@@ -27,5 +27,5 @@
   <g fill="none" stroke="#47AFFA" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
     <path d="m872 408 18 18 36-42"/><path d="m872 464 18 18 36-42"/><path d="m872 520 18 18 36-42"/>
   </g>
-  <text x="112" y="646" font-family="Arial,sans-serif" font-size="22" fill="#8EB5D0">Odoo 19 · Multi-company · Idempotent · Review-first</text>
+  <text x="112" y="646" font-family="Arial,sans-serif" font-size="22" fill="#8EB5D0">Odoo 18 · Multi-company · Idempotent · Review-first</text>
 </svg>
