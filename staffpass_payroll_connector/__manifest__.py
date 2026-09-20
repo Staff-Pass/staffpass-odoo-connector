@@ -7,8 +7,6 @@
     "support": "support@softwaretoaster.com",
     "category": "Accounting/Accounting",
     "license": "LGPL-3",
-    "price": 10.0,
-    "currency": "USD",
     "depends": ["account"],
     "data": [
         "security/staffpass_security.xml",
