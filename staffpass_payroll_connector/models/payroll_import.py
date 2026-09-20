@@ -35,10 +35,7 @@ class StaffPassPayrollImport(models.Model):
     line_count = fields.Integer(required=True, readonly=True)
     move_state = fields.Selection(related="move_id.state", string="Move state")
 
-    _sql_constraints = [
-        (
-            "staffpass_import_company_external_unique",
-            "unique(company_id, external_id)",
-            "This StaffPass journal was already imported for the company.",
-        )
-    ]
+    _company_external_unique = models.Constraint(
+        "unique(company_id, external_id)",
+        "This StaffPass journal was already imported for the company.",
+    )

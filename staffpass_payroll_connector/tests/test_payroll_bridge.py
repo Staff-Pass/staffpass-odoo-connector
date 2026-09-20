@@ -59,7 +59,7 @@ class TestStaffPassPayrollBridge(TransactionCase):
                     "login": "staffpass-integration-test",
                     "company_id": cls.company.id,
                     "company_ids": [Command.set(cls.company.ids)],
-                    "groups_id": [
+                    "group_ids": [
                         Command.set(
                             [
                                 cls.env.ref("base.group_user").id,
