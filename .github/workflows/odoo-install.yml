@@ -14,7 +14,9 @@ jobs:
   odoo-19:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    container: odoo:19.0
+    container:
+      image: odoo:19.0
+      options: --user root
     services:
       postgres:
         image: postgres:16-alpine
